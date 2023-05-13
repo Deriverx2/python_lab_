@@ -1,0 +1,1 @@
+iris_dict=json.load(iris_file)
