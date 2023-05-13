@@ -34,13 +34,16 @@ def calc_deduction(bp):
     d=80+get_per(bp,12)+get_per(bp,20)
   return d
 
+def display():
+  print("\n\n\n\t\t\tPAY SLIP")
+  print("\n\t\tEmployee name:",nam.capitalize())
+  print("\n\t\tEmployee code:",cod)
+  print("\n\t\tBasic salary: ₹",bp)
+  print("\n\t\t----------------------------")
+  print("\n\t\tGross salary: ₹",calc_salary(bp))
+  print("\n\t\tDeduction: ₹",calc_deduction(bp))
+  print("\n\t\tNet salary: ₹",net,"\n")
+
 nam,cod,bp=get_data()
 net=calc_salary(bp)-calc_deduction(bp)
-print("\n\n\n\t\t\tPAY SLIP")
-print("\n\t\tEmployee name:",nam.capitalize())
-print("\n\t\tEmployee code:",cod)
-print("\n\t\tBasic salary: ₹",bp)
-print("\n\t\t----------------------------")
-print("\n\t\tGross salary: ₹",calc_salary(bp))
-print("\n\t\tDeduction: ₹",calc_deduction(bp))
-print("\n\t\tNet salary: ₹",net,"\n")
+display()
