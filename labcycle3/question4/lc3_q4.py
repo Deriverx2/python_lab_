@@ -1,4 +1,3 @@
-
 import pickle,tabulate
 class vechile_details:
   #list of keys of the attributes of the vehicle.
@@ -118,14 +117,14 @@ class Vehicles(vechile_details):
 def main():
   vehicleObject = Vehicles()
   global mainLoopOption
-  if(int(input("Press 1 to Add new Entries \nPress 2 to Save report\n"))==1):
+  if(int(input("Press 1 to Add new Entries \nPress 2 to Load report\n"))==1):
     vehicleObject.addEntries()  
   else:
     filePath = input("Enter the file name : ")
     vehicleObject.loadFile(filePath)
   vehicleObject.display()
   
-  while( choice!=8):
+  while True:
     print("1.Add Entries\n2.Modify Attributes\n3.Delete Attributes\n4.Display Entries")
     print("5.Sort According to Mileage\n6.sort Attributes\n7.Create Pdf File\n8.Exit")
     choice = int(input())
@@ -145,10 +144,12 @@ def main():
       vehicleObject.list_of_vehicles()
     elif choice==8:
       print("Thank you")
+      break
     else:
       print("Invalid Option,Try Again!!")
   mainLoopOption = input("\nDo you Want to continue ?(y/n) ")
 
-mainloopOption = 'y'
-while (mainLoopOption=='y'):
+while True:
   main()
+  if mainLoopOption!='y':
+    break
